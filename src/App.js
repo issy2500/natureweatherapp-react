@@ -4,6 +4,7 @@ import './App.css';
 export default function App() {
   return (
     <div className="App">
+      <div className ="container">
      <h1>Weather App</h1> 
       <footer>
         This project is was created by 
@@ -15,8 +16,10 @@ export default function App() {
       target = "_blank">
         Repository
 
-      </a>
+      </a> 
+
          </footer>
+    </div>
     </div>
   );
 }
