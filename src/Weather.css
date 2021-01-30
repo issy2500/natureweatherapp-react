@@ -1,0 +1,17 @@
+.Weather {
+    border: 2px solid gray;
+    background-color: green; 
+    color: White;
+
+}
+
+.Weather .h1 {
+
+    text-align-: left;
+
+}
+
+.Weather .li {
+    text-align: left;
+
+}
