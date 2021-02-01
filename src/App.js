@@ -8,7 +8,7 @@ export default function App() {
       <div className ="container">
      <h1>World Weather </h1> 
 
-     <Weather/>
+     <Weather defaultCity ="Buscalan"/>
       <footer>
         This project is was created by {""}
         <a href="https://linkedin.com/in/isabel-castillo " target ="_blank">

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate"
 import axios from "axios";
 
-export default function Weather(){
-
+export default function Weather(props){
     const [ weatherData, setWeatherData] = useState({ready : false});
 
     function handleApiResponse(response){
@@ -14,11 +14,11 @@ export default function Weather(){
             wind: response.data.wind.speed,
             city:response.data.name,
             description:response.data.weather[0].description,
-            date:response.data.date,
-            iconUrl:"https://ssl.gstatic.com/onebox/weather/64/snow_light.png",
+            date:new Date(response.data.dt*1000),
+            icon:response.data.weather[0].icon,
         });
-     
     }
+
  if (weatherData.ready) {
     return (
         <div className="Weather">
@@ -27,14 +27,15 @@ export default function Weather(){
             </h1>
             <span className="day-weather">
             <ul>
-                <li> {weatherData.date}</li>
+                <li> <FormattedDate date={weatherData.date}/>
+               </li>
                 <li className = "text-capitalize">
                     {weatherData.description}</li>
             </ul>
             </span>
             <div className="row">
                 <div className="col-3">
-                    <img src ={weatherData.iconUrl} />
+                    <img src ={weatherData.icon} />
                     <span className="temperature">
                         {Math.round(weatherData.temperature)}
                     </span>
@@ -69,10 +70,10 @@ export default function Weather(){
     );
 } else {
        let apiKey ="9979b8bdc3d06bd98cddbd046eb5962f";
-    let city = "Buscalan";
     let apiUrl =`http://api.openweathermap.org/data/2.5/
-    weather?q=${city}&appid=${apiKey}&units=metric`;
+    weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleApiResponse);
    
+    return "Loading";
  }
 }
