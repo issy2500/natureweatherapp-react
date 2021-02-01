@@ -2,41 +2,13 @@
     border: 2px solid gray;
     background-color: green; 
     color: White;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 700px;
     padding: 14px;
+    border-radius:20px;
 
 }
 
-.Weather h1 {
-
-    text-align: center;
-    color:white;
-
-}
-
-.Weather .day-weather{
-    padding-bottom: 20px;
-    text-align:center;
-    
-}
-
-.Weather li {
-    list-style: none;
-}
 
 
-.Weather .search-input {
-    margin-right: 10px;
 
-}
-
-.Weather .search-button{
-    padding: 5px;
-    
-}
-
-.Weather .day-forecast{
-    padding:0px;
-    margin-right:500px;
-}
