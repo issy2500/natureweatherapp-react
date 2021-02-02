@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import "./WeatherData.css";
-import axios from "axios";
-import Weather from "./Weather";
+import  Search from "./Search";
 import "./WeatherData.css";
 
 export default function WeatherData(){

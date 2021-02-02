@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import "./Weather.css";
-import WeatherCity from "./WeatherCity"
+import WeatherCity from "./WeatherCity";
 import IconTemp from "./IconTemp";
-import SearchForm from "./SearchForm";
+import Search from "./Search";
 import WeatherData from "./WeatherData";
 
 
@@ -20,7 +20,7 @@ export default function Weather(props){
              </span>
                  </div>
                  <div className="col-4">
-                     <SearchForm/>
+                     <Search/>
                  </div>
                  <div className="col-4">
                      <WeatherData/>
