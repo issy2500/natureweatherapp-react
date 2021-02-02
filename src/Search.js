@@ -1,8 +1,15 @@
 import React, {useState} from "react";
-import "./SearchForm.css";
 import axios from "axios";
+import "./Search.css";
+import WeatherData from "./WeatherData";
+import WeatherCity from "./WeatherCity";
+import IconTemp from "./IconTemp";
+import FormattedDate from "./FormattedDate"
 
-export default function Search(props){
+
+export default function Search(){
+
+   
  
  const [weatherData,setWeatherData]=useState({ready : false});
 
@@ -13,37 +20,46 @@ export default function Search(props){
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
             precipitation:response.data.main.precipitation,
+            date: new Date(response.data.dt*1000),
             city:response.data.name,
-            description:response.data.weather[0].description,
-
+            description:response.data.weather[0].description,     
         });
-      
+     
     }
 
     if (weatherData.ready){
         return(
-         <div className="Search">
-        <div className="row">
-                <div className="row">
+           <div className="WeatherInfo" >
+             <div className="WeatherCity">
+                 <div className="row">
+                     <div className="col-12">
+                        <WeatherCity city ={weatherData.city} description={weatherData.description}/>
+                         <FormattedDate date= {weatherData.date}/>
+                     </div>
+                 </div>
+             </div>
+              <div className="Search">
+               <div className="row">
+                   <div className="col-3">
+                   <IconTemp temperature=  {Math.round(weatherData.temperature)} />
+                   </div>
+                <div className="col-3">
                  <input type ="value" placeholder="Enter City" autofocus="on">
                  </input>
-                     <input type="submit" value="Search">
+                 </div>
+                 <div className="col-3">
+                        <input type="submit" value="Search">
                           </input>
-                             </div>
-                                </div>
-
-                                  <div className="Search">
-                                      <span className="Temperature">
-                                          {Math.round(weatherData.temperature)}
-                                          {weatherData.wind}
-                                          {weatherData.description}
-                                          {weatherData.humidity}
-                                          {weatherData.city}
-                                          {weatherData.precipitation}
-                                        
-                                      </span>
+                          </div>
+                             <div className="col-3">
+                                  <div className="WeatherData">
+                                <WeatherData wind={weatherData.wind}  humidity ={weatherData.humidity}  precipitation ={weatherData.precipitation}/>   
+                                      </div>
+                                      </div>
                                       </div>
                                 </div>
+                                </div>
+                                
                                 
        
     );

@@ -1,6 +1,6 @@
 import React from "react";
-import Weather from "./Weather";
 import "./WeatherCity.css";
+
 
 
 export default function WeatherCity(props){
@@ -8,14 +8,11 @@ export default function WeatherCity(props){
         
             <ul>
         <h1>
-             Buscalan
+             {props.city}
         </h1>
-        <h4>
-            Monday 13:44
+        <h4 className ="text-capitalize">
+            {props.description}
         </h4>
-        <h6 className ="text-capitalize">
-           Sunny and Beautiful
-        </h6>
         </ul>
     );
     

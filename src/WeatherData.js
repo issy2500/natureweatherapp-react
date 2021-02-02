@@ -1,16 +1,17 @@
-import React, {useState} from "react";
-import "./WeatherData.css";
-import  Search from "./Search";
+import React from "react";
 import "./WeatherData.css";
 
-export default function WeatherData(){
+
+export default function WeatherData(props){
     return(
         <div className="WeatherData">
+            
         <ul>
-            <li> Humidity: %</li>
-            <li> Precitipation: %</li>
-            <li> Wind:  km/h</li>
+            <li> Humidity:{props.humidity} %</li>
+            <li> Precitipation:{props.precipitation} %</li>
+            <li> Wind:{props.wind}km/h</li>
         </ul>
         </div>
+        
     );
 }

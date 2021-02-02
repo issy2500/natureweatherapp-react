@@ -1,13 +1,14 @@
-import React, {useState} from "react";
+import React from "react";
 import "./IconTemp.css";
-import Search from "./Search";
 
-export default function IconTemp(response){
+
+
+export default function IconTemp(props){
 return(
 <div className="IconTemp">
 <img src ="https://ssl.gstatic.com/onebox/weather/64/snow.png"/>
 <span className="celsius-temp">
-    70
+{props.temperature}    
     </span> °C
 
 <span className="fahrenheit-temp">
