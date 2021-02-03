@@ -10,7 +10,7 @@ export default function Weather(){
         <div className="Weather">
             <div className="row">
                  <div className="col-12">
-                     <Search dafaultCity="New York"/>
+                     <Search defaultCity="New York"/>
                  </div>
             </div>
             <div className="row">
