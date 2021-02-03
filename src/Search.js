@@ -7,11 +7,10 @@ import IconTemp from "./IconTemp";
 import FormattedDate from "./FormattedDate"
 
 
-export default function Search(){
+export default function Search(props){
 
-   
- 
- const [weatherData,setWeatherData]=useState({ready : false});
+const [weatherData,setWeatherData]=useState({ready : false});
+const [city,setCity]=useState(props.defaultCity);
 
     function handleApiResponse(response){
         setWeatherData({
@@ -22,13 +21,29 @@ export default function Search(){
             precipitation:response.data.main.precipitation,
             date: new Date(response.data.dt*1000),
             city:response.data.name,
-            description:response.data.weather[0].description,     
+            description:response.data.weather[0].description, 
+            icon:response.data.weather[0].icon,    
         });
      
     }
 
+    function handleSubmit(event){
+        event.preventDefault();
+        search();
+    }
+
+    function updateCity(event){
+      setCity(event.target.value);
+    }
+
+     function search(){
+    const apiKey="9979b8bdc3d06bd98cddbd046eb5962f";
+    const apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleApiResponse);
+
+    }
     if (weatherData.ready){
-        return(
+        return (
            <div className="WeatherInfo" >
              <div className="WeatherCity">
                  <div className="row">
@@ -41,16 +56,21 @@ export default function Search(){
               <div className="Search">
                <div className="row">
                    <div className="col-3">
-                   <IconTemp temperature=  {Math.round(weatherData.temperature)} />
+                   <IconTemp temperature= {Math.round(weatherData.temperature)} icon={weatherData.icon}/>
                    </div>
+                   <form onSubmit={handleSubmit}>
                 <div className="col-3">
-                 <input type ="value" placeholder="Enter City" autofocus="on">
+                 <input type ="value" 
+                 placeholder="Enter City" 
+                 autofocus="on"
+                 onChange={updateCity}>
                  </input>
                  </div>
                  <div className="col-3">
                         <input type="submit" value="Search">
                           </input>
                           </div>
+                          </form>
                              <div className="col-3">
                                   <div className="WeatherData">
                                 <WeatherData wind={weatherData.wind}  humidity ={weatherData.humidity}  precipitation ={weatherData.precipitation}/>   
@@ -58,19 +78,10 @@ export default function Search(){
                                       </div>
                                       </div>
                                 </div>
-                                </div>
-                                
-                                
-       
+                                </div> 
     );
-    }else{
-          
-    let city = "New York";
-    const apiKey="9979b8bdc3d06bd98cddbd046eb5962f";
-    const apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleApiResponse);
-
-    return "Loading"
-
+    }else {
+        search();
+    return "Loading";
     }
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Weather.css";
-import IconTemp from "./IconTemp";
 import Search from "./Search";
 
 
@@ -11,7 +10,7 @@ export default function Weather(){
         <div className="Weather">
             <div className="row">
                  <div className="col-12">
-                     <Search/>
+                     <Search dafaultCity="New York"/>
                  </div>
             </div>
             <div className="row">
