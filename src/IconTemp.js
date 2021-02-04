@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./IconTemp.css";
 import {Cloudy,Snow, Sunny, Rain} from "weather-styled-icon";
 import {WeatherThemeProvider} from "weather-styled-icon";
@@ -34,7 +34,7 @@ export default function IconTemp(props){
     "50d": <Cloudy />,
     "50n": <Cloudy />,
    
-  }
+  };
 
   const myCustomTheme = {
   sunColor: RED,
@@ -45,7 +45,7 @@ export default function IconTemp(props){
   boltColor: LIGHT_BLUE,
   backgroundColor: WHITE,
   
-};
+ };
 
     const App = () => (
   <div>
@@ -56,20 +56,58 @@ export default function IconTemp(props){
     <Snow />
     </WeatherThemeProvider>
   </div>
-);
+ );
 
 
+ 
+ const[unit,setUnit]=useState("celsius");
+   
+ 
+ function convertToFahrenheit(event){
+      event.preventDefault();
+      setUnit("fahrenheit");
+      
+ };
 
-return(
-<div className="IconTemp">
-{codeMapping[props.icon]}
-<span className="celsius-temp">
-{props.temperature}    
-    </span> °C
+ function convertToCelsius(event){
+   event.preventDefault();
+   setUnit("celsius");
+ }
 
-<span className="fahrenheit-temp">
-   |  °F
-</span>
-            </div>
-);
+ function fahrenheit(){
+   return (Math.round(props.temperature* 9)/5+ 32);
+   
+ }
+
+    if (unit === "celsius"){
+       return(
+          <div className="IconTemp">
+            {codeMapping[props.icon]}
+          <span className="temperature">
+            {Math.round(props.temperature)}    
+                    </span> 
+                    <a href="/" onCLick={convertToCelsius}>
+                      °C {""}
+                    </a>
+                    |{""}
+                     <a href="/" onCLick={convertToFahrenheit}>
+                       °F </a>
+                    </div>
+     ); 
+     } else {
+      return(
+        <div className="IconTemp">
+             <span className="temperature">
+          {Math.round(fahrenheit())}
+          </span>
+          <span className="unit">
+             <a href="/" onCLick={convertToCelsius}>
+                      °C {""}
+                    </a>
+                    |{""}
+                       °F 
+          </span>
+            </div>  
+      );
+      }
 }
