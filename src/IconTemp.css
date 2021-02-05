@@ -10,3 +10,10 @@ border-radius:50%;
 box-shadow:0 0 0 0.375em #ffeb3b;
 animation:cqkDSr 12s infinite linear;
 }
+
+
+.IconTemp .IconTemp .temperature {
+
+    margin-top: -10px;
+    padding: none;
+}
