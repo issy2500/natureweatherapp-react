@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import "./IconTemp.css";
-import {Cloudy,Snow, Sunny, Rain} from "weather-styled-icon";
-import {WeatherThemeProvider} from "weather-styled-icon";
+import {WeatherThemeProvider, Sunny, Rain, Cloudy, Snow} from "weather-styled-icon";
 
 export const YELLOW = '#FFEB3B';
 export const AMBER = '#FFC107';
@@ -37,8 +36,8 @@ export default function IconTemp(props){
   };
 
   const myCustomTheme = {
-  sunColor: RED,
-  raysColor: RED,
+  sunColor: LIGHT_BLUE,
+  raysColor: AMBER,
   cloudsColor: GREY,
   dropsColor: RED,
   snowColor: LIGHT_BLUE,
@@ -47,7 +46,7 @@ export default function IconTemp(props){
   
  };
 
-    const App = () => (
+    const App=()=> (
   <div>
     <WeatherThemeProvider theme={myCustomTheme}>
     <Sunny/>
@@ -64,8 +63,8 @@ export default function IconTemp(props){
    
  
  function convertToFahrenheit(event){
-      event.preventDefault();
-      setUnit("fahrenheit");
+  event.preventDefault();
+  setUnit("fahrenheit");
       
  };
 
@@ -75,13 +74,12 @@ export default function IconTemp(props){
  }
 
  function fahrenheit(){
-   return (Math.round(props.temperature* 9)/5+ 32);
-   
+   return (Math.round(props.temperature* 9)/5+ 32); 
  }
-
+ 
     if (unit === "celsius"){
        return(
-          <div className="IconTemp">
+          <div className="Icon">
             {codeMapping[props.icon]}
           <span className="temperature">
             {Math.round(props.temperature)}    

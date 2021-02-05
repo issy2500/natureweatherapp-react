@@ -55,23 +55,22 @@ const [city,setCity]=useState(props.defaultCity);
              </div>
               <div className="Search">
                <div className="row">
-                   <div className="col-3">
+                   <div className="col-4">
                    <IconTemp temperature= {Math.round(weatherData.temperature)} icon={weatherData.icon}/>
                    </div>
+                   <div className="row">
                    <form onSubmit={handleSubmit}>
-                <div className="col-3">
+                
                  <input type ="value" 
                  placeholder="Enter City" 
                  autofocus="on"
                  onChange={updateCity}>
                  </input>
-                 </div>
-                 <div className="col-3">
                         <input type="submit" value="Search">
                           </input>
-                          </div>
                           </form>
-                             <div className="col-3">
+                          </div>
+                             <div className="col-4">
                                   <div className="WeatherData">
                                 <WeatherData wind={weatherData.wind}  humidity ={weatherData.humidity}  precipitation ={weatherData.precipitation}/>   
                                       </div>
