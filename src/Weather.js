@@ -13,11 +13,6 @@ export default function Weather(){
                      <Search defaultCity="New York"/>
                  </div>
             </div>
-            <div className="row">
-                <div className="col-12">
-                "Forecast goes here"
-                </div>
-            </div>
             </div>
     );
 }

@@ -14,9 +14,9 @@ export const RED ='#FF4F5E';
 export default function IconTemp(props){
     
   const codeMapping={
-    "01d": <Sunny />,
+    "01d": <Sunny/>,
     "01n": <Sunny />, // change the color of the sun to a dark one
-    "02d": <Cloudy />,
+    "02d": <Cloudy/>,
     "02n": <Cloudy />,
     "03d": <Cloudy />,
     "03n": <Cloudy />,
@@ -36,8 +36,8 @@ export default function IconTemp(props){
   };
 
   const myCustomTheme = {
-  sunColor: LIGHT_BLUE,
-  raysColor: AMBER,
+  sunColor: YELLOW,
+  raysColor: RED,
   cloudsColor: GREY,
   dropsColor: RED,
   snowColor: LIGHT_BLUE,
@@ -46,13 +46,10 @@ export default function IconTemp(props){
   
  };
 
-    const App=()=> (
+    const Icon=()=> (
   <div>
     <WeatherThemeProvider theme={myCustomTheme}>
-    <Sunny/>
-    <Cloudy />
-    <Rain />
-    <Snow />
+    {codeMapping[props.icon]}
     </WeatherThemeProvider>
   </div>
  );
@@ -74,37 +71,39 @@ export default function IconTemp(props){
  }
 
  function fahrenheit(){
-   return (Math.round(props.temperature* 9)/5+ 32); 
+   return Math.round((props.temperature* 9)/5+ 32); 
  }
  
     if (unit === "celsius"){
        return(
-          <div className="Icon">
-            {codeMapping[props.icon]}
-          <span className="temperature">
+         <div className ="row">
+            <div className = "col-2">
+          <span className="Icon">
+            <Icon/>
+            </span>
+            </div>
+            <div className = "col-2">
+          <div className="temperature">
             {Math.round(props.temperature)}    
-                    </span> 
-                    <a href="/" onCLick={convertToCelsius}>
-                      °C {""}
-                    </a>
-                    |{""}
-                     <a href="/" onCLick={convertToFahrenheit}>
-                       °F </a>
+                °C| 
+                <span onClick={convertToFahrenheit}>
+                  °F </span>
+                       </div> 
+                    </div>
                     </div>
      ); 
      } else {
       return(
         <div className="IconTemp">
-             <span className="temperature">
-          {Math.round(fahrenheit())}
-          </span>
+          <Icon/>
+             <div className="temperature">
+          {Math.round(fahrenheit())} 
           <span className="unit">
-             <a href="/" onCLick={convertToCelsius}>
-                      °C {""}
-                    </a>
-                    |{""}
-                       °F 
-          </span>
+             <span onClick={convertToCelsius}>
+               °C |</span> °F 
+                       </span>
+                         
+          </div>
             </div>  
       );
       }

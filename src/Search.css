@@ -1,8 +1,11 @@
-.Search .searching {
+.Search .Searching {
 
     background-color: white; 
     border-radius: 5px;
     font-style:"Playfair Display script=latin rev=2""Playfair Display script=latin rev=2" - 400 italic;
 
+}
 
+.Search .IconTemp{
+    margin-right:10px;
 }

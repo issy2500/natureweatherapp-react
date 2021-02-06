@@ -4,7 +4,8 @@ import "./Search.css";
 import WeatherData from "./WeatherData";
 import WeatherCity from "./WeatherCity";
 import IconTemp from "./IconTemp";
-import FormattedDate from "./FormattedDate"
+import FormattedDate from "./FormattedDate";
+import Forecast from "./Forecast";
 
 
 export default function Search(props){
@@ -56,19 +57,23 @@ const [city,setCity]=useState(props.defaultCity);
               <div className="Search">
                <div className="row">
                    <div className="col-4">
-                   <IconTemp temperature= {Math.round(weatherData.temperature)} icon={weatherData.icon}/>
+                       <span className="IconTemp">
+                   <IconTemp temperature= 
+                   {Math.round(weatherData.temperature)}
+                    icon={weatherData.icon}/>
+                   </span>
                    </div>
                    <div className="row">
                    <form onSubmit={handleSubmit}>
-                
                  <input type ="value" 
                  placeholder="Enter City" 
                  autofocus="on"
                  onChange={updateCity}>
                  </input>
-                        <input type="submit" value="Search" className ="searching">
+                        <input type="submit" value="Search" className ="Searching">
                           </input>
                           </form>
+                          
                           </div>
                              <div className="col-4">
                                   <div className="WeatherData">
@@ -77,6 +82,11 @@ const [city,setCity]=useState(props.defaultCity);
                                       </div>
                                       </div>
                                 </div>
+                                <div className="row">
+                                    <div className = "col-12">
+                                    <Forecast city ={weatherData.city}/>
+                                    </div>
+                                    </div>
                                 </div> 
     );
     }else {
