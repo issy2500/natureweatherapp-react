@@ -7,9 +7,9 @@ export default function WeatherData(props){
         <div className="WeatherData">
             
         <ul>
-            <li> Humidity:{props.humidity} %</li>
-            <li> Precitipation:{props.precipitation} %</li>
-            <li> Wind:{props.wind}km/h</li>
+            <li> Humidity:  {props.humidity} %</li>
+            <li> Precitipation: {props.precipitation} %</li>
+            <li> Wind: {props.wind}km/h</li>
         </ul>
         </div>
         

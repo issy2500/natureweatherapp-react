@@ -66,7 +66,7 @@ const [city,setCity]=useState(props.defaultCity);
                  autofocus="on"
                  onChange={updateCity}>
                  </input>
-                        <input type="submit" value="Search">
+                        <input type="submit" value="Search" className ="searching">
                           </input>
                           </form>
                           </div>

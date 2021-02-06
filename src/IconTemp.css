@@ -1,6 +1,6 @@
-.kHGOdP {
+.IconTemp .kHGOdP {
 position: absolute; 
-top: 50px;
+top: 10px;
 left:50px;
 width:2.5em;
 height:2.5em;
@@ -11,9 +11,12 @@ box-shadow:0 0 0 0.375em #ffeb3b;
 animation:cqkDSr 12s infinite linear;
 }
 
+ .temperature {
 
-.IconTemp .IconTemp .temperature {
-
-    margin-top: -10px;
+    margin-top: 200px;
     padding: none;
+}
+
+.unit{
+    color: white;
 }

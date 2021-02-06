@@ -1,6 +1,9 @@
 .WeatherData li {
     list-style:none;
-    margin-left:-10px;
+    margin-left:20px;
+    margin-top: 8px;
+    font:"Playfair Display script=latin rev=2" - 400 italic;
+
 }
 
 
