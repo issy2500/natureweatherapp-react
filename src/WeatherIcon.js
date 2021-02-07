@@ -12,10 +12,9 @@ export const INDIGO_LIGHT = '#E8EAF6';
 export const RED ='#FF4F5E';
 
 export default function WeatherIcon(props){
-
-  const codeMapping={
+const codeMapping={
     "01d": <Sunny/>,
-    "01n": <Sunny />, // change the color of the sun to a dark one
+    "01n": <Sunny />, 
     "02d": <Cloudy/>,
     "02n": <Cloudy />,
     "03d": <Cloudy />,
@@ -46,15 +45,15 @@ export default function WeatherIcon(props){
   
  };
 
-  let icon = codeMapping(props.icon);
-
-    return (
-       <div className="Icon">
+ let icon=codeMapping[props.icon];
+    
+  return (
+    <div className="Icon">
     <WeatherThemeProvider theme={myCustomTheme}>
     {icon}
     </WeatherThemeProvider>
   </div>
-    )
+);
 
 
 }
