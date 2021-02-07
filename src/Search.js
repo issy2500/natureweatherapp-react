@@ -3,7 +3,8 @@ import axios from "axios";
 import "./Search.css";
 import WeatherData from "./WeatherData";
 import WeatherCity from "./WeatherCity";
-import IconTemp from "./IconTemp";
+import Temp from "./Temp";
+import Icon from "./Icon";
 import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 
@@ -25,7 +26,6 @@ const [city,setCity]=useState(props.defaultCity);
             description:response.data.weather[0].description, 
             icon:response.data.weather[0].icon,    
         });
-     
     }
 
     function handleSubmit(event){
@@ -49,7 +49,8 @@ const [city,setCity]=useState(props.defaultCity);
              <div className="WeatherCity">
                  <div className="row">
                      <div className="col-12">
-                        <WeatherCity city ={weatherData.city} description={weatherData.description}/>
+                        <WeatherCity city ={weatherData.city} 
+                        description={weatherData.description}/>
                          <FormattedDate date= {weatherData.date}/>
                      </div>
                  </div>
@@ -57,10 +58,11 @@ const [city,setCity]=useState(props.defaultCity);
               <div className="Search">
                <div className="row">
                    <div className="col-4">
-                       <span className="IconTemp">
-                   <IconTemp temperature= 
+                       <span className="Temp">
+                   <Temp temperature= 
                    {Math.round(weatherData.temperature)}
-                    icon={weatherData.icon}/>
+                   />
+                   <Icon icon={weatherData.icon}/>
                    </span>
                    </div>
                    <div className="row">
@@ -77,7 +79,9 @@ const [city,setCity]=useState(props.defaultCity);
                           </div>
                              <div className="col-4">
                                   <div className="WeatherData">
-                                <WeatherData wind={weatherData.wind}  humidity ={weatherData.humidity}  precipitation ={weatherData.precipitation}/>   
+                                <WeatherData wind={weatherData.wind}  
+                                humidity ={weatherData.humidity}  
+                                precipitation ={weatherData.precipitation}/>   
                                       </div>
                                       </div>
                                       </div>

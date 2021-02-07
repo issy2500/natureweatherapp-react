@@ -33,7 +33,6 @@ export default function Forecast(props){
                 <div className ="col-2">
             <ForecastPreview  data={forecast.list[3]}/>
             </div>
-                 
               </div>
               </div>
              
