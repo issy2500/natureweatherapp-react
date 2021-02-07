@@ -4,7 +4,7 @@ import "./Search.css";
 import WeatherData from "./WeatherData";
 import WeatherCity from "./WeatherCity";
 import Temp from "./Temp";
-import Icon from "./Icon";
+import WeatherIcon from "./WeatherIcon";
 import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 
@@ -62,7 +62,7 @@ const [city,setCity]=useState(props.defaultCity);
                    <Temp temperature= 
                    {Math.round(weatherData.temperature)}
                    />
-                   <Icon icon={weatherData.icon}/>
+                   <WeatherIcon icon={weatherData.icon}/>
                    </span>
                    </div>
                    <div className="row">
