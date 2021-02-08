@@ -1,8 +1,6 @@
 import React from "react";
 import "./WeatherCity.css";
 
-
-
 export default function WeatherCity(props){
     return(
         

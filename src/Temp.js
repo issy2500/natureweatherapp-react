@@ -22,23 +22,24 @@ export default function Temp(props){
 
  function fahrenheit(){
    return (
-     <div className ="row">
-     {Math.round((props.temperature* 9)/5+ 32)} 
-     °C| <span 
-     onClick={convertToFahrenheit}>
-       °F </span>
-     </div>
+     Math.round((props.temperature* 9)/5+ 32)
    )
  }
     if (unit === "celsius"){
        return(
          <div className ="row">
             <div className = "col-2">
-            </div>
+            
             <div className = "col-2">
-          <div className="temperature">
+                <div className = "row">
+                  <span className="unit">
             {fahrenheit()}   
-                       </div> 
+          °C|°F
+          <a href="/" onClick={convertToFahrenheit}>
+          </a>
+          </span>
+          </div> 
+                   </div>
                     </div>
                     </div>
      ); 
@@ -48,11 +49,11 @@ export default function Temp(props){
              <div className="temperature">
           {Math.round(fahrenheit())} 
                <div className="Temp row">
-                <span onClick={convertToCelsius}>
-               °C|°F</span>
+                <a href="/" onClick={convertToCelsius}>
+               °C|</a>
+               °F
                 </div>
                        </div>
-         
             
       );
       }
