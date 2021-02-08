@@ -1,15 +1,17 @@
-.ForecastPreview .new-temperature {
-margin-top: 10px;
+.forecast-temp {
+margin-top: -50px;
 padding:none;
+font-size:20px;
 }
 
-.ForecastPreview .hours {
-    margin-bottom: -50px;
+.hours {
+    margin-bottom: -40px;
+    font-size:20px;
 }
 
 .sc-pFZIQ.cbznGz{
-    margin-top:-35px;
-    margin-bottom:-5px;
+    margin-top:-10px;
+    margin-bottom:-10px;
 }
 
 .sc-fubCfw.kHGOdP{
@@ -23,7 +25,5 @@ margin:-1.25e m;
 border-radius:50%;
 box-shadow: 0 0 0 0.375e m #ffeb3b;
 animation:cqkDSr 12s infinite linear;
-
-
 }
 

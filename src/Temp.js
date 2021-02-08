@@ -28,20 +28,20 @@ export default function Temp(props){
     if (unit === "celsius"){
        return(
          <div className ="row">
-            <div className = "col-2">  
-                  <span className="unit">
+          <span className="unit">
             {Math.round(fahrenheit())}   
-          °C|
-          <a href="/" onClick={convertToFahrenheit} rel="noreferrer">°F
+              °C|
+          <a href="/" onClick={convertToFahrenheit} rel="noreferrer">
+            °F
           </a>
             </span>
-                   </div> 
+                  
                     </div>
      ); 
      } else {
       return(
         <div className="row">
-             <div className="temperature">
+             <div className="unit">
           {Math.round(fahrenheit())} 
                 <a href="/" onClick={convertToCelsius} rel="noreferrer" >
                °C|</a>

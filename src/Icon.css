@@ -2,8 +2,8 @@
     position : absolute;
     top: 20%;
     left:40%;
-    width:2.5em;
-    height: 2.5em;
+    width:1.5em;
+    height: 1.5em;
     background: #FFFFFF;
     margin:-1.25e m;
     border-radius:50%;
@@ -15,8 +15,15 @@
 
 .sc-pFZIQcbznGz {
     position:relative;
-    display:inline-block;
-    height:0em;
-    width:5em;
+    height:7em;
+    width:4em;
     font-size:0em;
+}
+.cbznGz{
+
+position:relative;
+height: 7em;
+width:5em;
+font-size:1em;
+
 }
