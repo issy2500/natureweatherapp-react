@@ -6,7 +6,7 @@ import ForecastPreview from "./ForecastPreview.js";
 
 
 export default function Forecast(props){
-  ;
+  
     const [loaded,setLoaded]= useState(false);
     const [forecast,setForecast]= useState(null);
 
