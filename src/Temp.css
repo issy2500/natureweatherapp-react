@@ -1,8 +1,6 @@
- .temperature {
-    margin-left: 60px; 
-    font-size:20px;
-    margin-bottom: -30px;
-}
-.unit{
-    color: gray;
+ 
+.Temp .row{
+margin-left: 55px;
+font-size : 20px;
+margin-bottom: -30px;
 }

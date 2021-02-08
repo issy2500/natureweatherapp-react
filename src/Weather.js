@@ -1,6 +1,6 @@
 import React from "react";
 import "./Weather.css";
-import Search from "./Search";
+import Search from "./Search.js";
 
 
 

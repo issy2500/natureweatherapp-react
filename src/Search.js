@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import axios from "axios";
 import "./Search.css";
-import WeatherData from "./WeatherData";
-import WeatherCity from "./WeatherCity";
-import Temp from "./Temp";
-import WeatherIcon from "./WeatherIcon";
-import FormattedDate from "./FormattedDate";
-import Forecast from "./Forecast";
+import WeatherData from "./WeatherData.js";
+import WeatherCity from "./WeatherCity.js";
+import Temp from "./Temp.js";
+import WeatherIcon from "./WeatherIcon.js";
+import FormattedDate from "./FormattedDate.js";
+import Forecast from "./Forecast.js";
 
 
 export default function Search(props){
@@ -58,11 +58,12 @@ const [city,setCity]=useState(props.defaultCity);
               <div className="Search">
                <div className="row">
                    <div className="col-4">
-                       <span className="Temp">
-                   <Temp temperature= 
-                   {Math.round(weatherData.temperature)}
-                   />
-                   </span><span>
+                       <div className ="row">
+                       <span className="Temp">   
+                   <Temp temperature= {Math.round(weatherData.temperature)}
+                   />  </span>
+                   </div>
+                   <span>
                    <WeatherIcon icon={weatherData.icon}/>
                    </span>
                    </div>

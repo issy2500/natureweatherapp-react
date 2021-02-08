@@ -1,5 +1,5 @@
-.new-temperature{
-margin-top: -50px;
+.ForecastPreview .new-temperature {
+margin-top: 10px;
 padding:none;
 }
 
@@ -9,6 +9,7 @@ padding:none;
 
 .sc-pFZIQ.cbznGz{
     margin-top:-35px;
+    margin-bottom:-5px;
 }
 
 .sc-fubCfw.kHGOdP{

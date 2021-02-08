@@ -44,16 +44,15 @@ export default function Temp(props){
      ); 
      } else {
       return(
+         
              <div className="temperature">
           {Math.round(fahrenheit())} 
-          <div className="row">
-          <span className="unit">
-             <span onClick={convertToCelsius}>
-               
-               °C |</span> °F 
-                       </span>
+               <div className="Temp row">
+                <span onClick={convertToCelsius}>
+               °C|°F</span>
+                </div>
                        </div>
-          </div>
+         
             
       );
       }
