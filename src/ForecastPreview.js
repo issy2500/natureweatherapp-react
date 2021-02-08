@@ -16,10 +16,11 @@ function temperature (){
     return `${temperature} °C`;
 }
 return(
-
     <div clasName="row">
     <div className="forecast-preview">
+        <span className="hours">
          {hours()}
+         </span>
             <span className="IconTemp">
             <Icon icon={props.data.weather[0].icon}/>
             </span>

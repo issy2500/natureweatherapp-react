@@ -62,6 +62,7 @@ const [city,setCity]=useState(props.defaultCity);
                    <Temp temperature= 
                    {Math.round(weatherData.temperature)}
                    />
+                   </span><span>
                    <WeatherIcon icon={weatherData.icon}/>
                    </span>
                    </div>

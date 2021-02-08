@@ -46,10 +46,13 @@ export default function Temp(props){
       return(
              <div className="temperature">
           {Math.round(fahrenheit())} 
+          <div className="row">
           <span className="unit">
              <span onClick={convertToCelsius}>
+               
                °C |</span> °F 
                        </span>
+                       </div>
           </div>
             
       );
