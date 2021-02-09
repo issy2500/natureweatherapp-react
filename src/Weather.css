@@ -1,6 +1,6 @@
 .Weather {
     border: 2px solid gray;
-    background-image: url(C:\Users\inord\Desktop\SheCodes\natureweatherapp-react\src\Waterfall.jpg);
+    background-image: url("Waterfall.jpg");
     color: White;
     margin: 20px auto;
     max-width: 700px;

@@ -10,7 +10,6 @@ import Forecast from "./Forecast.js";
 
 
 export default function Search(props){
-
 const [weatherData,setWeatherData]=useState({ready : false});
 const [city,setCity]=useState(props.defaultCity);
 
@@ -61,7 +60,7 @@ const [city,setCity]=useState(props.defaultCity);
                        <div className ="row">
                        <span className="Temp">   
                    <Temp temperature= {Math.round(weatherData.temperature)}
-                   />  </span>
+                   />{" "}  </span>
                    </div>
                    <span>
                    <WeatherIcon icon={weatherData.icon}/>
@@ -71,13 +70,14 @@ const [city,setCity]=useState(props.defaultCity);
                    <form onSubmit={handleSubmit}>
                  <input type ="value" 
                  placeholder="Enter City" 
-                 autofocus="on"
+                 autoFocus="on"
                  onChange={updateCity}>
                  </input>
-                        <input type="submit" value="Search" className ="Searching">
+                        <input type="submit" 
+                        value="Search" 
+                        className ="Searching">
                           </input>
                           </form>
-                          
                           </div>
                              <div className="col-4">
                                   <div className="WeatherData">
