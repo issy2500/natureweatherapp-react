@@ -11,12 +11,12 @@ export default function App() {
      <Weather/>
       <footer>
         This project is was created by {""}
-        <a href="https://linkedin.com/in/isabel-castillo " target ="_blank">
+        <a href="https://linkedin.com/in/isabel-castillo " target ="_blank" rel="nonreferrer">
           Isabel Castillo  {""}
           </a> 
           and is open sourced by GitHub {""}
       <a href = "https://github.com/issy2500/natureweatherapp-react" 
-      target = "_blank">
+      target = "_blank" rel="nonreferrer">
         Repository
 
       </a> 
