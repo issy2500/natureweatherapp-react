@@ -5,7 +5,6 @@ import Search from "./Search.js";
 
 
 export default function Weather(){
-  
     return (
         <div className="Weather">
             <div className="row">

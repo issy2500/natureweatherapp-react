@@ -2,15 +2,12 @@ import React, {useState} from "react";
 import "./Temp.css";
 
 
-
 export default function Temp(props){
  const[unit,setUnit]=useState("celsius");
    
- 
  function convertToFahrenheit(event){
-  setUnit("fahrenheit");
-      
- };
+  setUnit("fahrenheit");    
+ }
 
  function convertToCelsius(event){
    setUnit("celsius");
@@ -34,7 +31,6 @@ export default function Temp(props){
              <div className="unit">
           {fahrenheit()} °F|
                 <button onClick = {convertToCelsius}>°C |</button>
-                   
                 </div>
                        </div>
             

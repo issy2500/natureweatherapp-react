@@ -1,8 +1,6 @@
 .Search .Searching {
-
     background-color: white; 
     border-radius: 5px;
-    font-family:"Playfair Display script=latin rev=2""Playfair Display script=latin rev=2" - 400 italic;
 }
 
 .Search .Searching:hover {

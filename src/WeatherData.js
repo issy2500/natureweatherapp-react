@@ -11,7 +11,6 @@ export default function WeatherData(props){
             <li> Precitipation: {props.precipitation} %</li>
             <li> Wind: {props.wind}km/h</li>
         </ul>
-        </div>
-        
+        </div> 
     );
 }

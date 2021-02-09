@@ -93,7 +93,9 @@ const [city,setCity]=useState(props.defaultCity);
                                     <Forecast city ={weatherData.city}/>
                                     </div>
                                     </div>
-                                </div> 
+                                    </div>
+
+                                
     );
     }else {
         search();

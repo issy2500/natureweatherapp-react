@@ -1,9 +1,7 @@
 import React from "react";
 import "./WeatherCity.css";
-
 export default function WeatherCity(props){
     return(
-        
             <ul>
         <h1>
              {props.city}
@@ -12,6 +10,5 @@ export default function WeatherCity(props){
             {props.description}
         </h4>
         </ul>
-    );
-    
+    );   
 }
