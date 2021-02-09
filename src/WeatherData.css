@@ -1,7 +1,8 @@
 .WeatherData li {
     list-style:none;
-    margin-left:20px;
+    margin-left:40px;
     margin-top: 8px;
+    font-size:19px;
 }
 
 

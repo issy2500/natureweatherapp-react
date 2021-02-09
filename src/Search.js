@@ -19,7 +19,6 @@ const [city,setCity]=useState(props.defaultCity);
             temperature:response.data.main.temp,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
-            precipitation:response.data.main.precipitation,
             date: new Date(response.data.dt*1000),
             city:response.data.name,
             description:response.data.weather[0].description, 
@@ -82,8 +81,7 @@ const [city,setCity]=useState(props.defaultCity);
                              <div className="col-4">
                                   <div className="WeatherData">
                                 <WeatherData wind={weatherData.wind}  
-                                humidity ={weatherData.humidity}  
-                                precipitation ={weatherData.precipitation}/>   
+                                humidity ={weatherData.humidity} />   
                                       </div>
                                       </div>
                                       </div>
