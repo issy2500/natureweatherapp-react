@@ -13,10 +13,10 @@ export default function Forecast(props){
     function handleApiResponse(response){
           setForecast(response.data);  
             setLoaded(true)
-        console.log(response.data)
+        
     }
 
-    if (loaded){
+    if (loaded && props.city === forecast.city.name){
         return (
         <div className ="forecastpreview">
            <div className ="row">

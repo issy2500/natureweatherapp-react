@@ -4,7 +4,6 @@ import "./ForecastPreview.css";
 
 
 export default function ForecastPreview(props){
-    console.log()
 function hours (){
     let date = new Date(props.data.dt* 1000)
     let hours = date.getHours()
